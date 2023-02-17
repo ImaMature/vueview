@@ -26,36 +26,32 @@
     <h4>{{ products[i] }}</h4>
     <p>{{ price1 }} 만원</p>
   </div> -->
-  <div>
+  <div v-for="(a, i) in productData" :key="i">
+    <img :src="productData[i].image" class="room-img">
+    <h4>{{ productData[i].title }}</h4>
+    <h4>{{ productData[i].price }} 원</h4>
+    <p>{{ productData[i].content }}</p>
+  </div> 
+  <!-- <div>
     <img src="./assets/room1.jpg" class="room-img">
     <h4 @click="btnModal">{{ products[0] }}</h4>
+     @ == v-on 
     <p>{{ price1 }} 만원</p>
-    <!-- @ == v-on -->
     <button @click="btnReport1">허위매물신고</button> <span>신고 수 : {{ reportCount[0] }}</span>
-  </div> 
-  <div>
-    <img src="./assets/room2.jpg" class="room-img">
-    <h4 @click="btnModal">{{ products[1] }}</h4>
-    <p>{{ price2 }} 만원</p>
-    <button @click="btnReport2">허위매물신고</button> <span>신고 수 : {{ reportCount[1] }}</span>
-  </div> 
-  <div>
-    <img src="./assets/room3.jpg" class="room-img">
-    <h4 @click="btnModal">{{ products[2] }}</h4>
-    <p>33 만원</p>
-    <button @click="btnReport3">허위매물신고</button> <span>신고 수 : {{ reportCount[2] }}</span>
-  </div> 
+  </div>  -->
+  
 </template>
 
 <script>
 //여기는 js
-
+import productData from './data/data.js';
 
 export default {
   name: 'App',
   //데이터 바인딩 : JS 데이터를 HTML에 꽂아넣는 문법
   data(){ //데이터 보관함 생성
     return{ //object 형 자료로 데이터 입력
+      productData: productData,
       price1 : 60,
       price2 : 70,
       blueColor : 'color:#14C38E;',
