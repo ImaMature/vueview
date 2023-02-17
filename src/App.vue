@@ -1,15 +1,23 @@
 <template>
 
-  
+  <MainHeader/>
+  <MainHome/>
+  <MainFooter/>
+
 </template>
 
 <script>
-//여기는 js
-import productData from './data/data.js';
+import MainHome from "@/pages/Home.vue"
+import MainFooter from "@/pages/Footer.vue"
+import MainHeader from "@/pages/Header.vue"
 
 export default {
   name: 'App',
-  components: {
+  components:{
+    MainHeader,
+    MainHome,
+    MainFooter
+    
   }
 }
 </script>
