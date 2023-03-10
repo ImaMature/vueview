@@ -38,7 +38,6 @@ export default {
   setup() {
     const state = reactive({
       arr: []
-
     })
 
     axios.get("/api/props").then(({data}) => {

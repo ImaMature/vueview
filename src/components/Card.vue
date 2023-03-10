@@ -1,19 +1,14 @@
 <template>
     <div class="card shadow-sm">
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-            aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>picture</title>
-            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                dy=".3em">Thumbnail</text>
-        </svg>
+        <img :src="p_img2">
         <div class="card-body">
-            <p class="card-text">{{moc.p_title}}</p>
+            <p class="card-text">{{ moc.p_title }}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted">{{moc.createdDate.substring(0,10)}}</small>
+                <small class="text-muted">{{ moc.createdDate.substring(0, 10) }}</small>
             </div>
         </div>
     </div>
@@ -24,7 +19,13 @@ export default {
     name: "Card",
     props: {
         moc: Object
+    },
+    data(){
+        return{
+            p_img2:require("../assets/img/props/"+this.moc.p_img)
+        }
     }
+
 }
 </script>
 
